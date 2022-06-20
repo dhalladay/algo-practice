@@ -36,7 +36,7 @@ let array = [1, 3, 5, 7, 8, 9, 10, 11]
 recursiveSearch(array, 6, 0, array.length-1);
 
 
-function recursiveSearch(arr, x) {
+function iterativeSearch(arr, x) {
   let start=0, end=arr.length-1;
   let mid = Math.floor((start + end)/2)
 

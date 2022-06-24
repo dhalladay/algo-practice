@@ -22,7 +22,7 @@
 //   }
 // }
 
-// hash-mapping
+// empty object (similar to hash map)
 
 // for the has mapping method, you will create an empty object and store the key value pairs from the nums array in your obj
 // the first time you reach a correct index for a value that adds up to the target, it's corresponding value/index pair

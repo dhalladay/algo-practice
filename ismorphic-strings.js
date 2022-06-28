@@ -28,22 +28,44 @@
 
 // the above failed on badc baba because it does not force unique values of key indicators(s). I believe I need to add Set somehow.
 
+// var isIsomorphic = function(s, t) {
+//   const mapST = new Map();
+//   const setST = new Set();
+
+//   for (var i = 0; i <= s.length - 1; i++) {
+
+//     if (mapST.has(s[i])) {
+//       if (mapST.get(s[i]) != t[i]) {
+//         return false
+//       } else if (setST.has(t[i])) {
+//         return false
+//       }
+//       mapST.set(s[i], t[i]);
+//       setST.add(t[i]);
+//     }
+//   }
+//   return true
+// };
+
+// isIsomorphic("foo", "bar")
+
+// failed again, something in the if else logic isn't working right. 
+
 var isIsomorphic = function (s, t) {
   const mapST = new Map();
   const setST = new Set();
 
   for (var i = 0; i <= s.length - 1; i++) {
 
-    if (mapST.has(s[i]) && mapST.get(s[i]) != t[i] ) {
-      return false
-    } else if(setST.has(t[i])) {
-      return false
+    if (mapST.has(s[i])) {
+      if (mapST.get(s[i]) !== t[i]) return false
+    } else {
+      if (setST.has(t[i])) return false
+      mapST.set(s[i], t[i]);
+      setST.add(t[i]);
     }
-    mapST.set(s[i], t[i]);
-    setST.add(t[i]);
   }
   return true
 };
 
-isIsomorphic("badc", "baba")
-
+isIsomorphic("foo", "bar")

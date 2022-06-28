@@ -12,20 +12,16 @@
 // if it's not there add it.
 
 var isIsomorphic = function(s, t) {
-  // compare the length of the s and t
-  // if(s.length === t.length) {
-    let mapST = new Map();
+    const mapST = new Map();
 
     for (var i = 0; i <= s.length -1; i++) {
-      if (mapST.has(s[i])) {
-        console.log(mapST[i], mapST)
+
+      if (mapST.has(s[i]) && mapST.get(s[i]) != t[i]) {
+        return false
       }
       mapST.set(s[i], t[i])
     }
-//   // }
-
-// return false
-
+ return true
 };
 
 isIsomorphic("foo", "bar")
